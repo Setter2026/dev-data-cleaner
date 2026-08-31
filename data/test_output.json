@@ -1,0 +1,26 @@
+[
+  {
+    "id": 101,
+    "name": "Leo",
+    "age": 10,
+    "status": "Active"
+  },
+  {
+    "id": 102,
+    "name": "Mia",
+    "age": null,
+    "status": "Pending"
+  },
+  {
+    "id": 103,
+    "name": "Sam",
+    "age": 12,
+    "status": "Active"
+  },
+  {
+    "id": 104,
+    "name": "Zoe",
+    "age": 11,
+    "status": "Active"
+  }
+]
