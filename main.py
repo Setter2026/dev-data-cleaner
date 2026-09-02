@@ -32,7 +32,7 @@ def test_pipeline():
     logger.addHandler(console_handler)
 
     # 5. File Handler (Appends to a permanent text file)
-    file_handler = logging.FileHandler("pipeline_errors.log", mode="a", encoding="utf-8")
+    file_handler = logging.FileHandler("data/pipeline_errors.log", mode="a", encoding="utf-8")
     file_handler.setFormatter(log_formatter)
     logger.addHandler(file_handler)
 
@@ -66,7 +66,7 @@ def test_pipeline():
 
     pipeline.run(
         input_filepath=input_file,
-        output_filepath=output_file
+        output_filepath=output_file                                          
     )
 
 test_pipeline()
