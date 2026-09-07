@@ -1,8 +1,9 @@
 import json
 import logging
 
+
 class JSONExporter:
-    def __init__(self, logger: logging.Logger = None):
+    def __init__(self, logger: logging.Logger | None = None):
         # Keeps its own notebook (logger)
         self.logger = logger or logging.getLogger("JSONExporter")
 
