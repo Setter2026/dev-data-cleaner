@@ -1,0 +1,10 @@
+ID: 101 | Name: Leo   | Age: 10 | Status: Active
+ID: 102 | Name: Mia   | Age: -- | Status: Pending
+  ID: 103 | Name: Sam | Age: 12 | Status: Active
+
+  ERROR: Could not read line 4 database timeout
+
+ ID: 104 | \ufeffname:: Zoe   | Age: 11 | Status: Active
+
+ ID: 105 | Name: Leo | Pipe | Sr. | Age: 12 | Status: Active\
+

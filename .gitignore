@@ -1,0 +1,6 @@
+# Ignore the data folder
+data/
+
+# Ignore any specific files or local logs
+*.log
+.env
