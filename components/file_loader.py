@@ -1,11 +1,15 @@
-from domain.exceptions import FileReadError
 import logging
 import os
+from collections.abc import Iterator
+
+from domain.exceptions import FileReadError
+
+
 class FileLoader:
     def __init__(self, logger=None):
         self.logger = logger or logging.getLogger("FileLoader")
 
-    def load(self, file_path: str) -> str:
+    def load(self, file_path: str) -> Iterator[str]:
         self.logger.info(f"Attempting to load: '{file_path}'")
 
         # 1. SPECIFIC CHECK: Does it exist?
@@ -14,10 +18,8 @@ class FileLoader:
             raise FileReadError(f"File not found: {file_path}")
 
         try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                content = f.read()
-                self.logger.info(f"SUCCESS: Read {len(content.splitlines())} lines.")
-                return content
+            with open(file_path, "r", encoding="utf-8") as file:
+                yield from file
 
         # 2. SPECIFIC CATCH: Access denied!
         except PermissionError:
@@ -33,3 +35,6 @@ class FileLoader:
         except Exception as e:
             self.logger.exception(f"UNKNOWN SYSTEM ERROR: {e}")
             raise FileReadError(f"Unreadable file: {e}")
+
+fileloader = FileLoader()
+loadedfile = fileloader.load("data/sample.txt")
